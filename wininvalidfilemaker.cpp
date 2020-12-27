@@ -1,6 +1,8 @@
 /*
  * Invalid Windows Files Maker
  * Made in C++ on December 27th, 2020
+ * Allows you to create files with names that aren't supposed to be allowed.
+ * MIT License
  * https://github.com/sidhys1/wininvalidfilemaker
 */
 
@@ -36,24 +38,50 @@ INT CompOS()
 }                  
 
 
-VOID updateDir(STRING newDir) {
-    dir = newDir;
+VOID getDir() {
+    std::cout << "Where would you like to put the folder(s)? Please respond with a valid directory, such as C:\\Users\\Sid\\Desktop:";
+    std::cin >> dir;
 }
 
-VOID getDir() {
-    std::cout << "" << std::endl;
+VOID getFiles() {
+    INT input;
+    std::cout << "What invalid file(s) would you like in that directory? Respond with 1 for ALL files, 2 for the files Con Aux Prn Nul and Lst, 3 for all the com files, and 4 for all the lpt files."  << std::endl;
+    std::cin >> input;
+
+    switch(input) {
+        case '1': 
+         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir + "\\prn &&" ;
+        break;     
+
+        case '2':
+        
+        break;
+
+        case '3':
+
+        break;
+
+        case '4':
+
+        break;
+
+        default: 
+
+        std::cout << "Invalid input." << std::endl; 
+    }
 }
 
 INT main() {
 int os = CompOS();
-if(os == 0) {
-    std::cout << "Your OS is not compatible with this program.";
+if(!os == 1) {
+    std::cout << "Your OS is not compatible with this program." << std::endl;
     std::cout << "Enter any value to exit the program." << std::endl;
     std::cin >> leave;
     return 0;
 }
-
-system("");
+getDir();
+getFiles();
+std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
 std::cin >> leave;
 return 0;
