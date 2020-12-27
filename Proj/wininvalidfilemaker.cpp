@@ -72,7 +72,7 @@ VOID getFiles() {
 }
 
 INT main() {
-int os = CompOS();
+INT os = CompOS();
 if(!os == 1) {
     std::cout << "Your OS is not compatible with this program." << std::endl;
     std::cout << "Enter any value to exit the program." << std::endl;
