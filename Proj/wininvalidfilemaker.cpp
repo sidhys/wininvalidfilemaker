@@ -1,7 +1,7 @@
 /*
  * Invalid Windows Files Maker
  * Made in C++ on December 27th, 2020
- * Allows you to create files with names that aren't supposed to be allowed.
+ * Allows you to create files with invalid names on Windows.
  * MIT License
  * https://github.com/sidhys1/wininvalidfilemaker
 */
