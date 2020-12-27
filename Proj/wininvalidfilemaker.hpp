@@ -13,3 +13,4 @@
 
 std::string dir;
 std::string leave;
+std::string CmdExc;
