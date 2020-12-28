@@ -50,7 +50,8 @@ VOID getFiles() {
     
     switch(input) {
         case '1': 
-         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul";
+         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
+         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul";
         break;     
 
         case '2':
@@ -72,8 +73,8 @@ VOID getFiles() {
 }
 
 INT main() {
-INT os = CompOS();
-if(!os == 1) {
+INT OS = CompOS();
+if(!OS == 1) {
     std::cout << "Your OS is not compatible with this program." << std::endl;
     std::cout << "Enter any value to exit the program." << std::endl;
     std::cin >> leave;
