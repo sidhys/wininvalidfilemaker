@@ -44,17 +44,21 @@ VOID getDir() {
 }
 
 VOID getFiles() {
-    INT input;
     std::cout << "What invalid file(s) would you like in that directory? Respond with 1 for ALL files, 2 for the files Con Aux Prn Nul and Lst, 3 for all the com files, and 4 for all the lpt files."  << std::endl;
     std::cin >> input;
     
     switch(input) {
-        case '1': 
-         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
+        case '1':
+
+        CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
          + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul";
+
         break;     
 
         case '2':
+        
+         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
+         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul";
         
         break;
 
@@ -84,6 +88,6 @@ getDir();
 getFiles();
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
-std::cin >> leave;
+std::cin >>     leave;
 return 0;
 }

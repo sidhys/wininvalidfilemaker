@@ -6,11 +6,21 @@
  * https://github.com/sidhys1/wininvalidfilemaker
 */
 
-
 #pragma once
 #include <windows.h>
 #include <Lmcons.h>
 
-std::string dir;
-std::string leave;
-std::string CmdExc;
+using namespace std;
+
+// Strings
+string dir;
+string leave;
+string CmdExc;
+
+// Voids
+
+
+// Ints
+int input;
+
+// Misc
