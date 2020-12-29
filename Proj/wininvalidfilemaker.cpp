@@ -95,6 +95,6 @@ catch (...)
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
-std::cin >>     leave;
+std::cin >> leave;
 return 0;
 }
