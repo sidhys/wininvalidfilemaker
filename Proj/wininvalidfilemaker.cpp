@@ -86,6 +86,13 @@ if(!OS == 1) {
 }
 getDir();
 getFiles();
+try {
+system(""); // convert std::string to char* later
+}
+catch (...) 
+{
+    std::cout << "A exception occured :(" << std::endl;
+}
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
 std::cin >>     leave;
