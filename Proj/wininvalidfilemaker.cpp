@@ -82,7 +82,7 @@ if(!OS == 1) {
     std::cout << "Your OS is not compatible with this program." << std::endl;
     std::cout << "Enter any value to exit the program." << std::endl;
     std::cin >> leave;
-    return 0;
+    return 1;
 }
 getDir();
 getFiles();
