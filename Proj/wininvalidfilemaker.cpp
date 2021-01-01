@@ -92,6 +92,7 @@ system(""); // convert std::string to char* later
 catch (...) 
 {
     std::cout << "A exception occured :(" << std::endl;
+    return 1;
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
