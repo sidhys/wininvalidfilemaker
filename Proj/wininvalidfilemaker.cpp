@@ -51,10 +51,13 @@ VOID getFiles() {
         case '1':
 
         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
-         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul" + "md \\.\\" 
+         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul &&" + "md \\.\\" 
          + dir + "\\com1 &&" + "md \\.\\" + dir + "\\com2 &&" + "md \\.\\" + dir 
         + "\\com3 &&" + "md \\.\\" + dir + "\\com4 &&" + "md \\.\\" + dir + "\\com5 &&" + "md \\.\\" 
-        + dir + "\\com6 &&" + "md \\.\\" + dir + "\\com7 &&" + "md \\.\\" + dir + "\\com8 &&" + "md \\.\\" + dir + "\\com9";
+        + dir + "\\com6 &&" + "md \\.\\" + dir + "\\com7 &&" + "md \\.\\" + dir + "\\com8 &&" + "md \\.\\" + dir + "\\com9 &&" + 
+          "md \\.\\" + dir + "\\lpt1 &&" + "md \\.\\" + dir + "\\lpt2 &&" + "md \\.\\" + dir + "\\lpt3 &&" + "md \\.\\" + dir + "\\lpt4 &&" +
+        "md \\.\\" + dir + "\\lpt5 &&" + "md \\.\\" + dir + "\\lpt6 &&" + "md \\.\\" + dir + "\\lpt8 &&" + 
+        "md \\.\\" + dir + "\\lpt9";
 
         break;     
 
