@@ -51,7 +51,10 @@ VOID getFiles() {
         case '1':
 
         CmdExc = "md \\.\\" + dir + "\\con &&" + "md \\.\\" + dir + "\\aux &&" + "md \\.\\" + dir
-         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul";
+         + "\\prn &&" + " md \\.\\" + dir + "\\lst && " + " md \\.\\" + dir + "\\nul" + "md \\.\\" 
+         + dir + "\\com1 &&" + "md \\.\\" + dir + "\\com2 &&" + "md \\.\\" + dir 
+        + "\\com3 &&" + "md \\.\\" + dir + "\\com4 &&" + "md \\.\\" + dir + "\\com5 &&" + "md \\.\\" 
+        + dir + "\\com6 &&" + "md \\.\\" + dir + "\\com7 &&" + "md \\.\\" + dir + "\\com8 &&" + "md \\.\\" + dir + "\\com9";
 
         break;     
 
@@ -63,11 +66,17 @@ VOID getFiles() {
         break;
 
         case '3':
+    
+        CmdExc = "md \\.\\" + dir + "\\com1 &&" + "md \\.\\" + dir + "\\com2 &&" + "md \\.\\" + dir 
+        + "\\com3 &&" + "md \\.\\" + dir + "\\com4 &&" + "md \\.\\" + dir + "\\com5 &&" + "md \\.\\" 
+        + dir + "\\com6 &&" + "md \\.\\" + dir + "\\com7 &&" + "md \\.\\" + dir + "\\com8 &&" + "md \\.\\" + dir + "\\com9";
 
         break;
 
         case '4':
-
+        CmdExc = "md \\.\\" + dir + "\\lpt1 &&" + "md \\.\\" + dir + "\\lpt2 &&" + "md \\.\\" + dir + "\\lpt3 &&" + "md \\.\\" + dir + "\\lpt4 &&" +
+        "md \\.\\" + dir + "\\lpt5 &&" + "md \\.\\" + dir + "\\lpt6 &&" + "md \\.\\" + dir + "\\lpt8 &&" + 
+        "md \\.\\" + dir + "\\lpt9";
         break;
 
         default: 
@@ -82,17 +91,17 @@ if(!OS == 1) {
     std::cout << "Your OS is not compatible with this program." << std::endl;
     std::cout << "Enter any value to exit the program." << std::endl;
     std::cin >> leave;
-    return 1;
+    return -1;
 }
 getDir();
 getFiles();
 try {
-system(""); // convert std::string to char* later
+system(CmdExc); 
 }
 catch (...) 
 {
-    std::cout << "A exception occured :(" << std::endl;
-    return 2;
+    std::cout << "A exception occured!" << std::endl;
+    return -1;
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
 std::cout << "Enter any value to exit the program." << std::endl;
