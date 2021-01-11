@@ -23,5 +23,5 @@ local g = os.clock()
 os.execute("echo Starting.. && " ..f)
 local h = os.clock()
 local i = h - g 
-print("Finished making files, took " .. i .. "seconds.")
+print("Finished making files, took " .. i .. " seconds.")
 print("Thank you for using wininvalidfilemaker!")
