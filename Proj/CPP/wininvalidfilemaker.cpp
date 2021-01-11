@@ -98,8 +98,9 @@ if(!OS == 1) {
 }
 getDir();
 getFiles();
+const char *Exc = CmdExc.c_str();
 try {
-system(CmdExc); 
+system(Exc); 
 }
 catch (...) 
 {
