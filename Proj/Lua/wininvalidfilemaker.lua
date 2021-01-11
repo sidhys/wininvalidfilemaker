@@ -16,7 +16,7 @@ function b(c)
     -- I'll add this later
 end
 
--- Change the value of D to the setting of the file generator | Options - All, Unumbered, Com, Lpt
+-- Change the value of e to the setting of the file generator | Options - All, Unumbered, Com, Lpt
 local e = "All"
 local f = b(e)
 local g = os.clock()
