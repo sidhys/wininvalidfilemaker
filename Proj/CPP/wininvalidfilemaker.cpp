@@ -5,12 +5,11 @@
  * MIT License
  * https://github.com/sidhys1/wininvalidfilemaker
 */
-
-
 #include <iostream>
 #include <cstring>
 #include <windows.h>
 #include <stdio.h>
+#include <exception>
 #include <shellapi.h>
 #include "wininvalidfilemaker.hpp"
 
@@ -37,11 +36,6 @@ INT CompOS()
     #endif
 }                  
 
-
-VOID getDir() {
-    std::cout << "Where would you like to put the folder(s)? Please respond with a valid directory, such as C:\\Users\\Sid\\Desktop:";
-    std::cin >> dir;
-}
 
 VOID getFiles() {
     std::cout << "What invalid file(s) would you like in that directory? Respond with 1 for ALL files, 2 for the files Con Aux Prn Nul and Lst, 3 for all the com files, and 4 for all the lpt files."  << std::endl;
@@ -96,15 +90,16 @@ if(!OS == 1) {
     std::cin >> leave;
     return -1;
 }
-getDir();
+std::cout << "Where would you like to put the folder(s)? Please respond with a valid directory, such as C:\\Users\\Sid\\Desktop: \n";
+std::cin >> dir;
 getFiles();
 const char *Exc = CmdExc.c_str();
 try {
 system(Exc); 
 }
-catch (...) 
+catch (const char *e)     
 {
-    std::cout << "A exception occured!" << std::endl;
+    std::cout << "A exception occured:" << e << std::endl;
     return -1;
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
