@@ -5,6 +5,7 @@
  * MIT License
  * https://github.com/sidhys1/wininvalidfilemaker
 */
+
 #include <iostream>
 #include <cstring>
 #include <windows.h>
