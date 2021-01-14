@@ -100,7 +100,30 @@ system(Exc);
 }
 catch (const char *e)     
 {
-    std::cout << "A exception occured:" << e << std::endl;
+    char * KernelMessage = "Task ended due to exception";
+    char * K_Msg = "A exception occured.";
+    char * K_Msg_Caption = "Exception";
+    
+    __asm {
+        move eax, KernelMessage
+        push eax
+        call printf
+        pop eax
+        mov eax, 0
+        mov ebx, K_Msg_Caption
+        mov ecx, K_Msg
+        mov edx, 0
+        push eax
+        push ebx
+        push ecx
+        push edx
+        call MessageBoxA
+        pop edx
+        pop ecx
+        pop ebx
+        pop eax
+    }
+    
     return -1;
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
