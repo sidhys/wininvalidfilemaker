@@ -38,6 +38,43 @@ INT CompOS()
 }                  
 
 
+__declspec(naked) void DisplayErr() {
+    
+    char * KernelMessage = "Task ended due to exception";
+    char * K_Msg = "A exception occured.";
+    char * K_Msg_Caption = "Exception";
+    __asm {
+        push ebp
+        mov ebp, esp
+    }
+
+    __asm {
+       
+        move eax, KernelMessage
+        push eax
+        call printf
+        pop eax
+        mov eax, 0
+        mov ebx, K_Msg_Caption
+        mov ecx, K_Msg
+        mov edx, 0
+        push eax
+        push ebx
+        push ecx
+        push edx
+        call MessageBoxA
+        pop edx
+        pop ecx
+        pop ebx
+        pop eax
+    }
+
+    __asm {
+        leave
+        ret
+    }
+}
+
 VOID getFiles() {
     std::cout << "What invalid file(s) would you like in that directory? Respond with 1 for ALL files, 2 for the files Con Aux Prn Nul and Lst, 3 for all the com files, and 4 for all the lpt files."  << std::endl;
     std::cin >> input;
@@ -99,31 +136,8 @@ try {
 system(Exc); 
 }
 catch (const char *e)     
-{
-    char * KernelMessage = "Task ended due to exception";
-    char * K_Msg = "A exception occured.";
-    char * K_Msg_Caption = "Exception";
-    
-    __asm {
-        move eax, KernelMessage
-        push eax
-        call printf
-        pop eax
-        mov eax, 0
-        mov ebx, K_Msg_Caption
-        mov ecx, K_Msg
-        mov edx, 0
-        push eax
-        push ebx
-        push ecx
-        push edx
-        call MessageBoxA
-        pop edx
-        pop ecx
-        pop ebx
-        pop eax
-    }
-    
+{    
+    DisplayErr();   
     return -1;
 }
 std::cout << "Generated files, thank you for using wininvalidfilemaker!" << std::endl;
