@@ -131,7 +131,7 @@ if(!OS == 1) {
 std::cout << "Where would you like to put the folder(s)? Please respond with a valid directory, such as C:\\Users\\Sid\\Desktop: \n";
 std::cin >> dir;
 getFiles();
-const char *Exc = CmdExc.c_str();
+const char* Exc = CmdExc.c_str();
 try {
 system(Exc); 
 }
